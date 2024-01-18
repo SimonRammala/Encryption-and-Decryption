@@ -1,7 +1,9 @@
 from letters import alphabet
+import random
 
-message = input("Enter your message => ")
-shift = int(input("Type the shift number => "))
+message = input("Enter the message you would like to encrypt => ")
+shift = random.randint(0, 1000000000000000)
+
 shift = shift%26
 
 def caesar_cipher_encryption(message , shift):
@@ -16,12 +18,17 @@ def caesar_cipher_encryption(message , shift):
         if letter[v] in alphabet:
             position = alphabet.index(letter[v])
             new_position = position + int(shift) % 26
+
+            if(new_position >= 26):
+                new_position = new_position -26
+           
             cipher_text += alphabet[new_position]
+            
         else:
-            cipher_text +=letter[v]
+            cipher_text += letter[v]
             
 
-    print(f"The encoded text is {cipher_text}")
+    print(f"The encrypted message is : {cipher_text} \nThe number used to encrypt the message is {shift}")
 
 
 caesar_cipher_encryption(message , shift)
