@@ -8,8 +8,7 @@ message = input("Enter the message you would like to encrypt => ").upper()
 shift = random.randint(0, 1000000000000000)
 shift = shift % 26  # Ensuring the shift value is within the range of the alphabet
 
-# Selecting a random character from the list
-random_character = random.choice(special_characters)
+
 
 # Function to perform Caesar cipher encryption
 def caesar_cipher_encryption(message, shift):
@@ -22,6 +21,9 @@ def caesar_cipher_encryption(message, shift):
 
     # Iterating through each character in the message
     for v in range(len(letter)):
+        # Selecting a random character from the list
+        random_character = random.choice(special_characters)
+
         if letter[v] in alphabet:  # Checking if the character is in the alphabet
             position = alphabet.index(letter[v])  # Finding the position of the character in the alphabet
             new_position = position + int(shift) % 26  # Calculating the new position after shifting
