@@ -1,4 +1,4 @@
-from letters import alphabet  # Importing the 'alphabet' list from the 'letters' module
+from characters import alphabet, special_characters  # Importing the 'alphabet' list from the 'letters' module
 
 # Asking the user for a message to decrypt
 message = input("Enter the message you would like to decrypt => ").upper()
